@@ -1,0 +1,31 @@
+﻿@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+@model my_project.Models.Product
+
+<h1>Home/Index</h1>
+
+@*input name ile model binding : controllerdaki post metodunun parametreleriyle aynı isimde olmalı (otomatik binding için)*@
+<form asp-action="CreateProduct" asp-controller="Home" method="post">
+	<input type="text" name="textProductName" placeholder="Ürün adı" />
+	<br />
+	<input type="number" name="textQuantity" placeholder="Miktar" />
+	<br />
+	<button>Ürün ekle</button>
+</form>
+
+@*input name ile model binding : controllerdaki post metodunun parametresindeki modelin propertyleri ile aynı isimde olmalı (otomatik binding için)*@
+<form asp-action="CreateProduct2" asp-controller="Home" method="post">
+	<input type="text" name="ProductName" placeholder="Ürün adı" />
+	<br />
+	<input type="number" name="Quantity" placeholder="Miktar" />
+	<br />
+	<button>Ürün ekle</button>
+</form>
+
+@*view modeli ile model binding : controllerdaki post metodunun parametresindeki model ile aynı olmalı (otomatik binding için)*@
+<form asp-action="CreateProduct2" asp-controller="Home" method="post">
+	<input type="text" asp-for=ProductName placeholder="Ürün adı" />
+	<br />
+	<input type="number" asp-for=Quantity placeholder="Miktar" />
+	<br />
+	<button>Ürün ekle</button>
+</form>

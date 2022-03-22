@@ -1,0 +1,36 @@
+﻿@model List<my_project.Models.Product> // Model Bazlı Veri Gönderimi
+
+@{
+	for (var i = 0; i < 3; i++)
+	{
+		<h5>Home/Index @i</h5>
+	}
+
+	<h6>Model Bazlı Veri Gönderimi</h6>
+
+	foreach (var product in Model) // Model Bazlı Veri Gönderimi
+	{
+		<li>@product.ProductName</li>
+	}
+
+	<h6>ViewBag İle Veri Gönderimi</h6>
+
+	foreach (var product in ViewBag.Products as List<my_project.Models.Product>) // ViewBag İle Veri Gönderimi
+	{
+		<li>@product.ProductName</li>
+	}
+
+	<h6>ViewData İle Veri Gönderimi</h6>
+
+	foreach (var product in ViewData["products"] as List<my_project.Models.Product>) // ViewData İle Veri Gönderimi
+	{
+		<li>@product.ProductName</li>
+	}
+
+	<h6>TempData İle Veri Gönderimi</h6>
+
+	foreach (var product in TempData["products"] as List<my_project.Models.Product>) // TempData İle Veri Gönderimi
+	{
+		<li>@product.ProductName</li>
+	}
+}

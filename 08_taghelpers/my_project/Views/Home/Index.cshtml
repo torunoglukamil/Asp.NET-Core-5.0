@@ -1,0 +1,35 @@
+﻿@addTagHelper * ,Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper * ,my_project
+
+@Html.BeginForm("Index", "Product", FormMethod.Post) @*HtmlHelper*@
+
+<form asp-action="Index" asp-controller="Product" method="post"></form> @*TagHelper*@
+
+<cache>
+	Cache : @DateTime.Now
+</cache>
+<br />
+@DateTime.Now
+
+<br />
+
+<img src="~/resim.png" asp-append-version="true"/> @*Sunucuda güncellenen resmin cache'de de güncellenmesi için*@
+
+<partial name="~/Views/Product/Index.cshtml">Home/Index</partial>
+
+<br />
+
+<!partial name="~/Views/Product/Index.cshtml">Home/Index</!partial> @*removeTagHelper*@
+
+<br />
+
+<a href="mailto:mktorunoglu55@gmail.com">Email</a>
+
+<br />
+
+@*myEmail HtmlTargetElement'i olmadan*@
+<email a="abc" mail="mktorunoglu55@gmail.com" display="Mail 1: Mehmet Kamil Torunoğlu"></email>
+
+<myemail a="abc" mail="mktorunoglu55@gmail.com" display="Mail 2: Mehmet Kamil Torunoğlu"></myemail>
+
+<send-mail-form></send-mail-form>

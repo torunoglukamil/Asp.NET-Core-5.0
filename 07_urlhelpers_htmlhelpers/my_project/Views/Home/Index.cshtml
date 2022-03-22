@@ -1,0 +1,12 @@
+﻿@model my_project.Models.Product
+@using my_project.Extentions
+
+<h1>Home/Index</h1>
+
+<h1>Get Products</h1>
+
+@Html.Partial("~/Views/Home/Partials/ListPartial.cshtml", Model)
+
+@Html.TextBox("txtAdi", null, new {style = "background-color:green; color:white;"})
+
+@Html.CustomTextBox("myName", "myValue", "myPlaceholder")

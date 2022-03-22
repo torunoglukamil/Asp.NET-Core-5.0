@@ -1,0 +1,46 @@
+﻿@*Razor yorum satırı*@
+
+@{
+	string mesaj = "Mesajım"; // 1. scopeta oluşturuldu.
+	int a = 5;
+	Console.WriteLine(a);
+}
+
+@{
+	Console.WriteLine(mesaj); // 2. scopetan erişildi.
+}
+
+@{
+	if (true)
+	{
+		<h3>Hello World!</h3>
+	}
+	else
+	{
+		<h3>FALSE</h3>
+	}
+}
+
+@if (false)
+{
+	<h3>Hello World!</h3>
+}
+else
+{
+	<h3>FALSE</h3>
+}
+
+<h3>@(5 + 3)</h3>
+
+<h3>@(5 > 3)</h3>
+
+<h3>@(5 > 3 ? "Doğru" : "Yanlış")</h3>
+
+<h3>@(mesaj)</h3>
+
+<h3>@mesaj</h3>
+
+@for (var i = 0; i < 5; i++)
+{
+	<h3>Item @i</h3>
+}
